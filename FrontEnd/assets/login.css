@@ -1,0 +1,147 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video label{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+	max-width: 1140px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0
+}
+section {
+	margin: 50px 0
+}
+
+h1{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1 > span {
+	font-family: 'Work Sans';
+	font-size:10px;
+	letter-spacing: 0.1em;
+;
+}
+
+h2{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+main h2 {
+    text-align: center;
+    margin-top: 100px;
+}
+li:hover {
+	color: #B1663C;
+}
+#introduction {
+	display: flex;
+	align-items: center;
+}
+#introduction figure {
+	flex: 1
+}
+#introduction img {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+#introduction article {
+	flex: 1
+}
+#introduction h2 {
+	margin-bottom: 1em;
+}
+
+#introduction p {
+	margin-bottom: 0.5em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+   margin-left: 35%;
+   
+}
+
+input {
+    width: 379px;
+    height: 51px;
+    background-color: white;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 14px 0px #00000017;
+    border: none;
+}
+input:hover {
+    border: solid;
+    border-color: blue;
+}
+button {
+	color: #1D6154;
+	background-color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 36px;
+	border-radius: 60px;
+    margin-left: 12%;
+    width: 179px;
+    margin-bottom: 30px;
+}
+button:hover {
+	color: white;
+	background-color: #1D6154;}
+
+main p {
+    text-align: center;
+}
+main a {
+    color: black;
+    
+}
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em;
+    margin-top: 300px;
+}

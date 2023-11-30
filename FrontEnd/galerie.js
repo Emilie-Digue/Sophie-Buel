@@ -37,51 +37,37 @@ async function genererFiltre(){
 
     for (let i=0; i <categorie.length; i++) {
 
-        const filtre = categorie[i];
+        const filtres = categorie[i];
         const sectionFiltres = document.querySelector(".filtres");
 
         const button = document.createElement("button");
-        button.innerText = filtre.name;
+        button.innerText = filtres.name;
 
         sectionFiltres.appendChild(button);
     
-    button.addEventListener("click", async function() {
-        const reponse = await fetch('http://localhost:5678/api/works');
-        const projets = await reponse.json();
-        
-        for (let i=0; i < projets.length; i++) {
-            const article = projets[i];
+        button.addEventListener("click", async function() {
+            const reponse = await fetch('http://localhost:5678/api/works');
+            const projets = await reponse.json();
+                
+            const filtre = projets.filter(function (projet) {
+                return projet.categoryId === [i];
+            
+            const suppr = document.querySelector(".gallery").innerHTML="";
+            
+            const projetFiltre = projets.categoryId[i];
             const sectionFiches = document.querySelector(".gallery");
-           
+       
             const projetElement = document.createElement("article");
             const imageElement = document.createElement("img");
-           
+            imageElement.src = article.imageUrl;
             const nomElement = document.createElement("figcaption");
-            nomElement.innerText = "";
-    
-            sectionFiches.appendChild(projetElement);
-            projetElement.appendChild(imageElement);
-            projetElement.appendChild(nomElement);    
-            
-        const objetFiltre = projets.filter(function (projet) {
-
-        const articleFiltre = categorie[i];
-        const sectionFiches = document.querySelector(".gallery");
-       
-        const projetElement = document.createElement("article");
-        const imageElement = document.createElement("img");
-        imageElement.src = article.imageUrl;
-        const nomElement = document.createElement("figcaption");
-        nomElement.innerText = article.title;
-
-        sectionFiches.appendChild(projetElement);
-        projetElement.appendChild(imageElement);
-        projetElement.appendChild(nomElement);;
+             nomElement.innerText = article.title;
+            console.log(button);
         })
-        console.log(objetFiltre);
-    }
-    })
+        })
+    
 }
 }
 
 genererFiltre();
+

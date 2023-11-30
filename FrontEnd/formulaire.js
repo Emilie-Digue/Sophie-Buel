@@ -1,6 +1,6 @@
 const form = document.querySelector('form');
 
-form.addEventListener("submit", (event)=> {
+form.addEventListener("submit", async (event)=> {
     event.preventDefault();
     console.log("Il ny' a pas eu de rechargment");
 
@@ -8,11 +8,14 @@ form.addEventListener("submit", (event)=> {
         email : document.querySelector("email"),
         password: document.querySelector("password"),
     }
-    const chargeUtile = JSON.stringify(login);
+    console.log(login);
 
-   fetch("http://localhost:5678/api/users/login", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: chargeUtile
+    const log = await fetch("http://localhost:5678/api/users/login").then (log =>log.json());
+    const valeurEmail = JSON.stringify(email);
+    const valeurPassword = JSON.stringigy(password);
+    
+    const valeurUserID = JSON.stringify(userId);
+    const valeurToken = JSON.stringify(token)
+
+    window.localStorage.seItem("log", valeurEmail, valeurPassword, valeurUserID, valeurToken);
     })
-})
